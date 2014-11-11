@@ -9,27 +9,22 @@ def find_minimum_with_index(array)
       candidate_index = index
     end
   end
-  print "minimum: " + candidate.to_s + "\n"
   return [candidate, candidate_index]      
 end
 
-def selection_sort(array)
 
-  # for index in (0...array.length)
-    # print "array at step " + (index).to_s + ": " + array.to_s + "\n"
-    # element = array[index]
-    # minimum = find_minimum_with_index(array[index...array.length])[0]
-    # minimum_index = find_minimum_with_index(array[index...array.length])[1]
-    # array[index] = minimum
-    # array[index...array.length][minimum_index] = element    
-    # # array[index...array.length] =  [minimum] + array[index + 1...array.length]
-    # print "array after step " + (index + 1).to_s + ": " + array.to_s + "\n"
-  # end
-  # return array
+def selection_sort(array)
+  sorted_array = []
+  for index in (0...array.length)    
+    minimum_index = find_minimum_with_index(array)[1]
+    sorted_array.push(array.delete_at(minimum_index))    
+  end
+return sorted_array  
 end
 
+print selection_sort([9,8,7,6,5,4,3,2,1]).to_s + "\n"
 
-print find_minimum_with_index([9,8,7,6,5,4,3,2,1]).to_s + "\n"
+
+print selection_sort([9,8,6,6,5,100,3,2,1]).to_s + "\n"
 
 
-# print selection_sort([9,8,7,6,5,4,3,2,1]).to_s + "\n"
