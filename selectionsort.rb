@@ -1,3 +1,5 @@
+# An implementation of the selection sort algorithm.
+
 
 
 def find_minimum_with_index(array)
