@@ -1,4 +1,4 @@
-# An implementation of the selection sort algorithm.
+# An implementation of the selection sort algorithm in Ruby.
 
 
 

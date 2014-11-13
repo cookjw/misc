@@ -1,3 +1,7 @@
+# An implementation of the selection sort algorithm in Python.
+
+
+
 
 def find_minimum_with_index(list):
     candidate = list[0]
@@ -18,7 +22,7 @@ def selection_sort(list):
     
     
     
-print str(selection_sort([9,8,7,6,5,4,3,2,1]))+ "\n"
+print str(selection_sort([9,8,7,6,5,4,3,2,1])) + "\n"
 
 print str(selection_sort([9,8,6,6,5,100,3,2,1])) + "\n"
 
