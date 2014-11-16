@@ -1,4 +1,4 @@
-
+# Merge Sort in Python
 
 # merge two lists
 # - create new list to hold result of merging
@@ -9,12 +9,6 @@
 # - repeat until a list is empty; move the remaining element(s) of the 
 # other list (in sorted order) to the new list 
 
-def remove_duplicates(list): # Shouldn't this be built in?
-    new_list = []
-    for item in list:
-        if not item in new_list:
-            new_list.append(item)
-    return new_list
 
 def merge(list1, list2):
     new_list = []    
