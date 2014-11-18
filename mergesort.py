@@ -38,6 +38,7 @@ def merge(list1, list2):
 # - keep merging adjacent lists until only one list remains; then
 # return that list, which should be the sorted result
 
+# (This is text I'm going to remove, to see if I can successfully remove things.)
 
 def merge_sort(list):
     lists = [[item] for item in list]
