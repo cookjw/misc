@@ -26,7 +26,7 @@ while current_altitude > 0:
         speed = terminal_velocity
     current_altitude = starting_altitude - distance_fallen(elapsed_time) 
     if current_altitude >= 0:    
-        print "\r", "altitude: ", round(current_altitude, 1), "ft ", \
+        print "\r", "altitude:", round(current_altitude, 1), "ft ", \
             "speed:", round(speed, 1), "ft/sec ", \
             "time:", round(elapsed_time, 1), "sec", 
     
