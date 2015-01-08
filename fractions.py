@@ -38,10 +38,10 @@ class Fraction:
         b = self.denominator
         c = other.numerator
         d = other.denominator
-        return Fraction(a*b, c*d)
+        return Fraction(a*c, b*d)
 
     def __div__(self, other):
-        return self * other.reciprocal             
+        return self * other.reciprocal()             
 
     def __float__(self):
         return self.decimal    

@@ -23,6 +23,16 @@ class FractionTest(unittest.TestCase):
         x = Fraction(1,2)
         y = Fraction(1,3) 
         self.assertEqual(str(x-y), "1/6")
+        
+    def test_multiplication(self):
+        x = Fraction(1,2)
+        y = Fraction(1,3) 
+        self.assertEqual(str(x*y), "1/6")
+
+    def test_division(self):
+        x = Fraction(1,2)
+        y = Fraction(1,3)
+        self.assertEqual(str(x/y), "3/2")            
 
     def test_reciprocal(self):
         self.assertEqual(str(Fraction(1,2).reciprocal()), "2")
