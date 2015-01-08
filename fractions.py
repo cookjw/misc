@@ -49,18 +49,3 @@ class Fraction:
     
     
     
-
-x = Fraction(3,4)
-print x
-
-x = Fraction(1,2)
-y = Fraction(1,3)
-print x + y
-
-print x == y
-print x > y
-print x >= y
-print x < y
-print x <= y
-
-print x.reciprocal()
