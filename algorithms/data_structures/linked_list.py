@@ -21,7 +21,8 @@ class DoublyLinkedList:
     def delete(self, x):
         if x.prev is not None:
             x.prev.next = x.next
-        else self.head = x.next
+        else:
+            self.head = x.next
         if x.next is not None:
             x.next.prev = x.prev
             
