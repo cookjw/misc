@@ -1,22 +1,36 @@
+class ObjectThatCouldBeInList:
+    def __init__(self, value=None):
+        self.value = value
+        
+    def __repr__(self):
+        return str(self.value)
+        
+    def __str__(self):
+        return self.__repr__()
+        
+def objectify(x):
+    return ObjectThatCouldBeInList(x)
+        
+
 class DoublyLinkedList:
 
     def __init__(self, *args):
         self.head = None        
         for item in args:
-            self.insert(item)
+            self.insert(objectify(item))
             
     def search(self, item):
         x = self.head
-        while (x is not None) and x != item:
+        while (x is not None) and x.value != item:
             x = x.next
         return x
         
-    def insert(self, x):
+    def insert(self, x):     
         x.next = self.head
         if self.head is not None:
             self.head.prev = x
         self.head = x
-        self.prev = None
+        x.prev = None
         
     def delete(self, x):
         if x.prev is not None:
@@ -26,14 +40,17 @@ class DoublyLinkedList:
         if x.next is not None:
             x.next.prev = x.prev
             
-    def reverse(self):
+    def reverse(self):        
         x = self.head
-        while (x is not None):
+        while (x is not None):            
             next = x.next
-            prev = x.prev
+            prev = x.prev            
             x.next = prev
             x.prev = next
-            x = prev
+            if next is None:
+                self.head = x            
+            x = next
+
         
     def minimum(self):
         return self.head
