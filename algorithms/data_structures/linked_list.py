@@ -96,6 +96,18 @@ class LinkedListDouble:
         for item in args[::-1]:
             self.insert(item)
             
+    def __repr__(self):
+        return "linked list (double) with head " + str(self.head)
+        
+    def __str__(self):
+        x = self.head
+        display = "<--" + str(x) + "-->"        
+        while x is not None:
+            x = x.next
+            display += " " + "<--" + str(x) + "-->"
+        return display           
+    
+   
     def search(self, item):
         x = self.head
         while (x is not None) and x.value != item:
