@@ -111,18 +111,8 @@ class LinkedListSingle:
         while (y is not None) and y.next != x:
             y = y.next
         if y.next == x:
-            y.next = x.next            
-  
-    
-    # def reverse(self):        
-        # prev = None # for purposes of pointing item 0's arrow
-        # x = self.head # starting at item 0        
-        # while x is not None:            
-            # next = x.next # saving next item for purposes of advancement
-            # x.next = prev # reversing current item's arrow         
-            # prev = x # saving current item for purposes of pointing next item's arrow
-            # self.head = x # moving the head forward, so that it finally ends up at the last item            
-            # x = next # moving to next item  
+            y.next = x.next      
+
 
 
     def reverse(self):
