@@ -15,7 +15,7 @@ def objectify(x):
     return ObjectThatCouldBeInList(x)
         
 
-class DoublyLinkedList:
+class LinkedListDouble:
 
     def __init__(self, *args):
         self.head = None        
@@ -74,12 +74,24 @@ class DoublyLinkedList:
         
     
 
-class SinglyLinkedList:
+class LinkedListSingle:
 
     def __init__(self, *args):
         self.head = None
-        for item in args:
+        for item in args[::-1]:
             self.insert(item)
+           
+    def __repr__(self):
+        return "linked list with head " + str(self.head)
+        
+    def __str__(self):
+        x = self.head
+        display = str(x) + "-->"        
+        while x is not None:
+            x = x.next
+            display += " " + str(x) + "-->"
+        return display
+        
             
     def search(self, item):
         x = self.head
@@ -102,15 +114,28 @@ class SinglyLinkedList:
             y.next = x.next            
   
     
-    def reverse(self):        
-        prev = None # for purposes of pointing item 0's arrow
-        x = self.head # starting at item 0        
-        while x is not None:            
-            next = x.next # saving next item for purposes of advancement
-            x.next = prev # reversing current item's arrow         
-            prev = x # saving current item for purposes of pointing next item's arrow
-            self.head = x # moving the head forward, so that it finally ends up at the last item            
-            x = next # moving to next item  
+    # def reverse(self):        
+        # prev = None # for purposes of pointing item 0's arrow
+        # x = self.head # starting at item 0        
+        # while x is not None:            
+            # next = x.next # saving next item for purposes of advancement
+            # x.next = prev # reversing current item's arrow         
+            # prev = x # saving current item for purposes of pointing next item's arrow
+            # self.head = x # moving the head forward, so that it finally ends up at the last item            
+            # x = next # moving to next item  
+
+
+    def reverse(self):
+        prev = None
+        current = self.head        
+        while current is not None:            
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev
+            
+
             
     def minimum(self):
         return self.head
