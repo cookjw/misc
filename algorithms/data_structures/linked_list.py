@@ -12,8 +12,10 @@ class ObjectThatCouldBeInList:
         return self.value == other.value
         
 def objectify(x):
-    return ObjectThatCouldBeInList(x)
-    
+    if isinstance(x, ObjectThatCouldBeInList):
+        return x
+    else:        
+        return ObjectThatCouldBeInList(x)  
 
 class LinkedListSingle:
 
@@ -43,7 +45,12 @@ class LinkedListSingle:
     def insert(self, x):
         x = objectify(x)
         x.next = self.head
-        self.head = x
+        self.head = x        
+    
+    def insert_after(self, item_in_list, new_item):
+        new_item = objectify(new_item)
+        new_item.next = item_in_list.next
+        item_in_list.next = new_item   
         
     def delete(self, x):
         y = self.head
