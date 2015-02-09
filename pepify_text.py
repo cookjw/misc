@@ -88,16 +88,22 @@ def find_nearest_space_before(line, position):
         if line[index] == " ":
             return index   
 
-def pepify(list_of_lines, file="pepification_results.txt", maxlength=72):
+def pepify(
+    list_of_lines, file="pepification_results.txt", maxlength=72
+    ):
     linelist = LinkedList(list_of_lines)
     line_node = linelist.head
     while line_node is not None:       
         if len(line_node.value) <= maxlength:
             file.write(str(line_node.value))
         else:
-            nearest_space = find_nearest_space_before(line_node.value, maxlength)
+            nearest_space = find_nearest_space_before(
+                line_node.value, maxlength
+                )
             if nearest_space:
-                split(linelist, line_node, line_node.value, nearest_space)
+                split(
+                    linelist, line_node, line_node.value, nearest_space
+                    )
                 file.write(str(line_node.value))
             else:
                 split(linelist, line_node, line_node.value, maxlength)
